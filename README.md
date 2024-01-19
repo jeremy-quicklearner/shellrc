@@ -3,7 +3,7 @@ My dotfiles for various shells. To apply them, type:
 
 ```
 $ git clone https://github.com/jeremy-quicklearner/shellrc.git
-$ ./vim/setup
+$ ./shellrc/setup
 ```
 
 If you already have a ~/.bashrc, ~/.zshrc, etc., all the config
