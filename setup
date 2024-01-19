@@ -1,0 +1,36 @@
+#!/bin/bash
+set -e
+
+# A UUID to identify that this script has touched a dotfile
+MY_UUID="fa0e8780-9acb-479f-a68a-b059277ff70b"
+
+# All Shell stuff goes in the directory this script is in
+SHELLDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+create_dotfile () {
+    # Make sure the dotfile exists
+    if ! [ -e ~/.$1rc ] ; then
+        touch ~/.$1rc
+    fi
+
+    # Modify the dotfile, but only if it's the first time
+    # i.e. if the UUID isn't already there
+    if ! grep -q $MY_UUID ~/.$1rc ; then
+        # In case the dotfile doesn't already end with a newline
+        echo ""                             >> ~/.$1rc
+
+        # So someone reading the dotfile knows what they're looking at
+        echo "# Jeremy's $1 Configurations" >> ~/.$1rc
+
+        # So that if this script is run again by mistake, we don't modify the
+        # dotfile again
+        echo "# $MY_UUID"                   >> ~/.$1rc
+
+        # Source the version-controlled counterpart of the dotfile
+        echo "source $SHELLDIR/$1rc.sh"       >> ~/.$1rc
+    fi
+}
+
+create_dotfile shell
+create_dotfile bash
+create_dotfile zsh
