@@ -3,7 +3,7 @@ ETCDIR=$SHRCDIR/etc
 mkdir -p $ETCDIR
 
 ZSHDIR=$ETCDIR/zsh
-mkdir -p ZSHDIR
+mkdir -p $ZSHDIR
 
 FPATHDIR=$ZSHDIR/fpath
 mkdir -p $FPATHDIR
