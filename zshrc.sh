@@ -72,5 +72,14 @@ if [ ! -f $FPATHDIR/_git ]; then
     chmod a+x $FPATHDIR/_git
 fi
 
+# fg \d
+fg() {
+    if [[ $# -eq 1 && $1 = - ]]; then
+        builtin fg %-
+    else
+        builtin fg %"$@"
+    fi
+}
+
 # Simple stuff that works for all shells goes in here
 source ~/.shellrc
