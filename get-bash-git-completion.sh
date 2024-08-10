@@ -1,3 +1,5 @@
+#!/bin/bash
+
 SHRCDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 ETCDIR=$SHRCDIR/etc
 mkdir -p $ETCDIR

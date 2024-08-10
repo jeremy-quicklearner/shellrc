@@ -64,7 +64,7 @@ SAVEHIST=10000
 
 # Git auto-complete
 # zsh script depends on bash script
-source $SHRCDIR/get-bash-git-completion.sh
+$SHRCDIR/get-bash-git-completion.sh
 zstyle ':completion:*:*:git:*' script $ETCDIR/bash/git-completion.bash
 if [ ! -f $FPATHDIR/_git ]; then
     echo "Downloading git-completion.zsh..."
