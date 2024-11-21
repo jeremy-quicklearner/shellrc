@@ -9,9 +9,6 @@ FPATHDIR=$ZSHDIR/fpath
 mkdir -p $FPATHDIR
 fpath=($FPATHDIR $fpath)
 
-# Enable completion
-autoload -Uz compinit; compinit
-
 # Debian-like prompt with vi mode indicator
 # https://stackoverflow.com/questions/39871079/detect-zsh-keymap-mode-for-vi-visual-mode
 ZLE_KEYMAP="%F{green}i%f"
@@ -71,6 +68,9 @@ if [ ! -f $FPATHDIR/_git ]; then
     curl -L https://github.com/git/git/raw/master/contrib/completion/git-completion.zsh > $FPATHDIR/_git
     chmod a+x $FPATHDIR/_git
 fi
+
+# Enable completion
+autoload -Uz compinit; compinit
 
 # fg \d
 fg() {
