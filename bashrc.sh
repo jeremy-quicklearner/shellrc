@@ -37,8 +37,8 @@ if [ $BASH_VERSINFO -ge 5 ] ; then
 # Fallback to simpler prompt if Bash is too old. The vi mode indicator is replaced by xxx
 else
     PROMPT_COMMAND=
-    PS1="\[\e[0;32m\]\u@\$JEREMY_HN\[\e[0;0m\]:\[\e[0;34m\]\w\[\e[0;0m\] (\e[0;33mx\$(prompt) "
-    PS2="\[\e[0;32m\]\u@\$JEREMY_HN\[\e[0;0m\]:\[\e[0;34m\]\w\[\e[0;0m\] (\e[0;33mx\$(prompt '>') "
+    PS1="\[\e[0;0m\][bash] \[\e[0;32m\]\u@\$JEREMY_HN\[\e[0;0m\]:\[\e[0;34m\]\w\[\e[0;0m\] (\e[0;33mx\$(prompt) "
+    PS2="\[\e[0;0m\][bash] \[\e[0;32m\]\u@\$JEREMY_HN\[\e[0;0m\]:\[\e[0;34m\]\w\[\e[0;0m\] (\e[0;33mx\$(prompt '>') "
 fi
 
 # Vim is the best text editor
